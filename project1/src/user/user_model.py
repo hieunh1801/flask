@@ -11,8 +11,7 @@ class User(db.Model):
     address = Column(String(200), nullable=False)
 
 
-class UserSchema(ma.SQLAlchemyAutoSchema):
+class UserSchema(ma.ModelSchema):
     class Meta:
         model = User
-        sessions = db.session
         fields = ("id", "username", "full_name", "address")
